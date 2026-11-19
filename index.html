@@ -3,14 +3,16 @@
 <p>ClipDesk is a small Windows program used by the operator of the YouTube channel
 <strong>Joachim Clips</strong> (<a href="https://www.youtube.com/@JoachimClipsTV">@JoachimClipsTV</a>).
 It runs on the operator's own computer. It follows public live streams the operator has documented rights to use,
-finds highlight moments, cuts short vertical clips and subtitles them locally, and, only after the operator approves each video,
-uploads it to that same YouTube channel through the YouTube Data API.</p>
+finds highlight moments, cuts short vertical clips and subtitles them locally, and uploads it to that same YouTube channel through the YouTube Data API.
+By default the operator approves each video first. The operator can instead let ClipDesk upload clips that pass an automatic quality check and have documented source rights,
+always as private videos. Scheduled public release is a separate, off-by-default option that needs an additional permission and the operator's explicit confirmation.</p>
 <h2>How ClipDesk uses a Google account</h2>
 <p>Only the operator connects a Google account, once, to authorize two YouTube permissions:</p>
 <ul>
 <li><code>youtube.readonly</code>: confirm that the connected account controls the Joachim Clips channel and show basic video counters.</li>
-<li><code>youtube.upload</code>: upload operator-approved videos, private by default, to that channel.</li>
+<li><code>youtube.upload</code>: upload videos, private by default, to that channel.</li>
 </ul>
+<p>If the operator ever enables scheduled public release, ClipDesk would additionally request <code>youtube.force-ssl</code>, only to change the visibility or publish time of videos it uploaded itself. This policy and the Google consent screen will list it before it is used.</p>
 <p>ClipDesk is not a public service. It has no user accounts, no sign-up, no website back end and no servers.</p>
 <p><a href="privacy.html">Privacy policy</a> &middot; <a href="terms.html">Terms of service</a> &middot;
 <a href="https://github.com/KESSPPOO/clipdesk-legal/issues">Contact (GitHub issues)</a></p>

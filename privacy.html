@@ -5,13 +5,13 @@ Contact: <a href="https://github.com/KESSPPOO/clipdesk-legal/issues">GitHub issu
 <h2>Google user data ClipDesk accesses</h2>
 <p>When the operator connects a Google account, ClipDesk requests two permissions: <code>youtube.readonly</code>
 (to confirm which YouTube channel is connected and read basic video information and counters) and
-<code>youtube.upload</code> (to upload videos the operator has approved to that channel and to set their visibility).
+<code>youtube.upload</code> (to upload videos to that channel, private by default). The operator may choose manual approval of each upload, or automatic upload of clips that pass a quality check and have documented source rights. If the operator separately enables scheduled public release, ClipDesk would also request <code>youtube.force-ssl</code>, used only to change the visibility or publish time of videos ClipDesk itself uploaded.
 Only the operator's own account is connected.</p>
 <h2>How data is used and stored</h2>
 <ul>
 <li>Google access credentials are stored only on the operator's Windows computer, encrypted with Windows DPAPI under the operator's Windows account.</li>
 <li>A local queue stores clip metadata, upload history, YouTube video IDs and recent video counters on the same computer. Counters expire after seven days.</li>
-<li>A video file and its title and description are sent to YouTube only when an upload is approved. ClipDesk communicates with Google and YouTube only to authorize, verify the channel, upload and read the status and counters of its own videos.</li>
+<li>A video file and its title and description are sent to YouTube only when an upload is approved by the operator or automatically allowed by the operator's chosen settings. ClipDesk communicates with Google and YouTube only to authorize, verify the channel, upload and read the status and counters of its own videos.</li>
 <li>Subtitles are generated locally by a speech model on the computer. Audio and video are not sent to any other service.</li>
 <li>ClipDesk reads public live streams of sources the operator has documented rights to use, and the live chat of Twitch channels it follows. Chat is used only to count message activity to detect highlights; message text and user identities are not retained. Video recordings and clips stay on the operator's computer until uploaded or deleted.</li>
 <li>The local dashboard is reachable only from the same computer (127.0.0.1).</li>
